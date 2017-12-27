@@ -13,6 +13,9 @@
 		7DEB90021FF380950081296C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DEB90011FF380950081296C /* Assets.xcassets */; };
 		7DEB90051FF380950081296C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DEB90031FF380950081296C /* LaunchScreen.storyboard */; };
 		7DEB90081FF380950081296C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB90071FF380950081296C /* main.m */; };
+		7DEB90101FF380A40081296C /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DEB900F1FF380A40081296C /* HomeKit.framework */; };
+		7DEB90141FF39AD40081296C /* RoomListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB90131FF39AD40081296C /* RoomListVC.m */; };
+		7DEB90181FF3A0FC0081296C /* AccessoryListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB90171FF3A0FC0081296C /* AccessoryListVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,13 @@
 		7DEB90041FF380950081296C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DEB90061FF380950081296C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DEB90071FF380950081296C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7DEB900F1FF380A40081296C /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		7DEB90111FF380A40081296C /* HomeKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HomeKit.entitlements; sourceTree = "<group>"; };
+		7DEB90121FF39AD40081296C /* RoomListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoomListVC.h; sourceTree = "<group>"; };
+		7DEB90131FF39AD40081296C /* RoomListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoomListVC.m; sourceTree = "<group>"; };
+		7DEB90151FF39CA50081296C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		7DEB90161FF3A0FC0081296C /* AccessoryListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccessoryListVC.h; sourceTree = "<group>"; };
+		7DEB90171FF3A0FC0081296C /* AccessoryListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccessoryListVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DEB90101FF380A40081296C /* HomeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +55,7 @@
 			children = (
 				7DEB8FF71FF380950081296C /* HomeKit */,
 				7DEB8FF61FF380950081296C /* Products */,
+				7DEB900E1FF380A40081296C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +70,16 @@
 		7DEB8FF71FF380950081296C /* HomeKit */ = {
 			isa = PBXGroup;
 			children = (
+				7DEB90111FF380A40081296C /* HomeKit.entitlements */,
 				7DEB8FF81FF380950081296C /* AppDelegate.h */,
 				7DEB8FF91FF380950081296C /* AppDelegate.m */,
 				7DEB8FFB1FF380950081296C /* ViewController.h */,
 				7DEB8FFC1FF380950081296C /* ViewController.m */,
+				7DEB90121FF39AD40081296C /* RoomListVC.h */,
+				7DEB90131FF39AD40081296C /* RoomListVC.m */,
+				7DEB90161FF3A0FC0081296C /* AccessoryListVC.h */,
+				7DEB90171FF3A0FC0081296C /* AccessoryListVC.m */,
+				7DEB90151FF39CA50081296C /* PrefixHeader.pch */,
 				7DEB8FFE1FF380950081296C /* Main.storyboard */,
 				7DEB90011FF380950081296C /* Assets.xcassets */,
 				7DEB90031FF380950081296C /* LaunchScreen.storyboard */,
@@ -69,6 +87,14 @@
 				7DEB90071FF380950081296C /* main.m */,
 			);
 			path = HomeKit;
+			sourceTree = "<group>";
+		};
+		7DEB900E1FF380A40081296C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7DEB900F1FF380A40081296C /* HomeKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,6 +129,11 @@
 					7DEB8FF41FF380950081296C = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HomeKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -143,7 +174,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DEB8FFD1FF380950081296C /* ViewController.m in Sources */,
+				7DEB90141FF39AD40081296C /* RoomListVC.m in Sources */,
 				7DEB90081FF380950081296C /* main.m in Sources */,
+				7DEB90181FF3A0FC0081296C /* AccessoryListVC.m in Sources */,
 				7DEB8FFA1FF380950081296C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,8 +311,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HomeKit/HomeKit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HomeKit/PrefixHeader.pch";
 				INFOPLIST_FILE = HomeKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zving.HomeKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -291,8 +329,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HomeKit/HomeKit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HomeKit/PrefixHeader.pch";
 				INFOPLIST_FILE = HomeKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zving.HomeKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
